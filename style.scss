@@ -1,0 +1,126 @@
+* {
+  box-sizing: border-box;
+}
+:root {
+  background: whitesmoke;
+  font-size: 20px;
+  font-family: 'Oxygen', Arial, sans-serif;
+}
+body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+br {
+  margin: 0 0 10px;
+}
+main {
+  background-color: hsl(49, 100%, 50%);
+  padding: 48px;
+  box-shadow: 0 6px 6px rgba(0,0,0,0.13);
+  border-radius: 8px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+h1 {
+  text-align: center;
+  font-size: 32px;
+  color: hsl(229, 75%, 40%);
+  margin: 0;
+}
+label {
+  display: flex;
+  flex-direction: column;
+  textarea {
+    font-family: inherit;
+    font-size: inherit;
+    margin-top: 4px;
+    border-radius: 12px;
+    border: 1px solid hsl(49, 80%, 30%);
+    padding: 6px;
+  }
+}
+button {
+  background-color: hsl(229, 75%, 40%);
+  border-radius: 12px;
+  border: none;
+  width: 50%;
+  margin: 0 auto;
+  font-size: inherit;
+  outline-offset: 4px;
+  cursor: pointer;
+  padding: 0;
+  span {
+    padding: 12px;
+    border-radius: 12px;
+    color: white;
+    display: block;
+    background-color: hsl(229, 75%, 55%);
+    transform: translateY(-6px);
+    box-shadow: 0 6px 7px rgba(0,0,0,0.3);
+}
+  &:active span {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 4px rgba(0,0,0,0.5);
+  }
+  &[disabled] {
+    cursor: not-allowed;
+      background-color: hsl(229, 35%, 40%);
+    span {
+      background-color: hsl(229, 35%, 40%);
+      transform: translateY(-4px);
+    }
+  }
+}
+.loading {
+  min-height: 100px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  .spinner {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 20px;
+    top: 30px;
+    border: 10px solid transparent;
+    border-top-color: hsl(229, 75%, 55%);
+    border-left-color: hsl(229, 75%, 55%);
+    border-radius: 50%;
+    animation: spinner 400ms linear infinite;
+  }
+  .loading-text {
+    font-size: 24px;
+  }
+}
+.result {
+  min-height: 150px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  .result-title {
+    font-size: 24px;
+    position: absolute;
+    left: 0px;
+    top: 62px;
+    line-height: 1;
+    color: hsl(229, 75%, 40%);
+  }
+  .result-winners {
+    font-size: 24px;
+  }
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
